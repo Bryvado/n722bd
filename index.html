@@ -1,72 +1,57 @@
-<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>N722BD replay</title><body><p id="status" style="font:16px system-ui;padding:24px">Loading N722BD replay…</p><script>window.N722BD_PARTS=[];</script><script src="assets/replay-000.js"></script>
-<script src="assets/replay-001.js"></script>
-<script src="assets/replay-002.js"></script>
-<script src="assets/replay-003.js"></script>
-<script src="assets/replay-004.js"></script>
-<script src="assets/replay-005.js"></script>
-<script src="assets/replay-006.js"></script>
-<script src="assets/replay-007.js"></script>
-<script src="assets/replay-008.js"></script>
-<script src="assets/replay-009.js"></script>
-<script src="assets/replay-010.js"></script>
-<script src="assets/replay-011.js"></script>
-<script src="assets/replay-012.js"></script>
-<script src="assets/replay-013.js"></script>
-<script src="assets/replay-014.js"></script>
-<script src="assets/replay-015.js"></script>
-<script src="assets/replay-016.js"></script>
-<script src="assets/replay-017.js"></script>
-<script src="assets/replay-018.js"></script>
-<script src="assets/replay-019.js"></script>
-<script src="assets/replay-020.js"></script>
-<script src="assets/replay-021.js"></script>
-<script src="assets/replay-022.js"></script>
-<script src="assets/replay-023.js"></script>
-<script src="assets/replay-024.js"></script>
-<script src="assets/replay-025.js"></script>
-<script src="assets/replay-026.js"></script>
-<script src="assets/replay-027.js"></script>
-<script src="assets/replay-028.js"></script>
-<script src="assets/replay-029.js"></script>
-<script src="assets/replay-030.js"></script>
-<script src="assets/replay-031.js"></script>
-<script src="assets/replay-032.js"></script>
-<script src="assets/replay-033.js"></script>
-<script src="assets/replay-034.js"></script>
-<script src="assets/replay-035.js"></script>
-<script src="assets/replay-036.js"></script>
-<script src="assets/replay-037.js"></script>
-<script src="assets/replay-038.js"></script>
-<script src="assets/replay-039.js"></script>
-<script src="assets/replay-040.js"></script>
-<script src="assets/replay-041.js"></script>
-<script src="assets/replay-042.js"></script>
-<script src="assets/replay-043.js"></script>
-<script src="assets/replay-044.js"></script>
-<script src="assets/replay-045.js"></script>
-<script src="assets/replay-046.js"></script>
-<script src="assets/replay-047.js"></script>
-<script src="assets/replay-048.js"></script>
-<script src="assets/replay-049.js"></script>
-<script src="assets/replay-050.js"></script>
-<script src="assets/replay-051.js"></script>
-<script src="assets/replay-052.js"></script>
-<script src="assets/replay-053.js"></script>
-<script src="assets/replay-054.js"></script>
-<script src="assets/replay-055.js"></script>
-<script src="assets/replay-056.js"></script>
-<script src="assets/replay-057.js"></script>
-<script src="assets/replay-058.js"></script>
-<script src="assets/replay-059.js"></script>
-<script src="assets/replay-060.js"></script>
-<script src="assets/replay-061.js"></script>
-<script src="assets/replay-062.js"></script>
-<script src="assets/replay-063.js"></script>
-<script src="assets/replay-064.js"></script>
-<script src="assets/replay-065.js"></script>
-<script src="assets/replay-066.js"></script>
-<script src="assets/replay-067.js"></script>
-<script src="assets/replay-068.js"></script>
-<script src="assets/replay-069.js"></script>
-<script src="assets/replay-070.js"></script>
-<script src="assets/replay-071.js"></script><script>(async()=>{try{const bytes=Uint8Array.from(atob(window.N722BD_PARTS.join('')),c=>c.charCodeAt(0));const html=await new Response(new Blob([bytes]).stream().pipeThrough(new DecompressionStream('gzip'))).text();document.open();document.write(html);document.close();}catch(e){document.getElementById('status').textContent='Could not load replay: '+e.message;}})();</script></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#020617">
+<title>N722BD replay</title>
+<style>
+/* Loader shares the replay's tokens: slate neutrals, sky accent, amber marker. */
+:root{--bg:#020617;--line:#1e293b;--text:#f1f5f9;--text-2:#94a3b8;--text-3:#64748b;--accent:#38bdf8;--estimate:#ffbe58;--mono:ui-monospace,"SF Mono",Menlo,Consolas,monospace}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{margin:0;display:grid;place-items:center;padding:1rem;background:var(--bg);color:var(--text);font:14px/1.55 Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased}
+.card{width:100%;max-width:24rem}
+.kicker{display:flex;align-items:center;gap:.5rem;font:600 11px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--text-3)}
+.kicker::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--estimate);box-shadow:0 0 0 3px #ffbe581a}
+h1{margin:.625rem 0 1.5rem;font-size:1.25rem;font-weight:600;letter-spacing:-.015em}
+.track{height:4px;border-radius:999px;background:var(--line);overflow:hidden}
+.fill{height:100%;width:0;background:var(--accent);border-radius:inherit;transition:width .2s cubic-bezier(.2,.7,.2,1)}
+.row{display:flex;justify-content:space-between;gap:1rem;margin-top:.75rem;font-size:12px;color:var(--text-2)}
+#pct{font-family:var(--mono);font-variant-numeric:tabular-nums;color:var(--text-3)}
+.error #status{color:#fda4af}.error .fill{background:#fb7185}
+noscript{display:block;margin-top:1rem;font-size:13px;color:var(--text-2)}
+@media(prefers-reduced-motion:reduce){.fill{transition:none}}
+</style>
+</head>
+<body>
+<main class="card" id="card" aria-busy="true">
+<div class="kicker">N722BD · November 1, 2026</div>
+<h1>Flight and weather replay</h1>
+<div class="track" role="progressbar" aria-label="Loading replay" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="bar"><div class="fill" id="fill"></div></div>
+<div class="row"><span id="status" aria-live="polite">Loading replay data…</span><span id="pct">0%</span></div>
+<noscript>This replay needs JavaScript, WebGL and DecompressionStream in a current browser.</noscript>
+</main>
+<script>
+(()=>{
+  const N=72,parts=[];let done=0;
+  const $=id=>document.getElementById(id);
+  const progress=f=>{const p=Math.round(f*100);$('fill').style.width=p+'%';$('pct').textContent=p+'%';$('bar').setAttribute('aria-valuenow',p);};
+  const fail=m=>{$('card').classList.add('error');$('status').textContent='Could not load replay: '+m;$('card').setAttribute('aria-busy','false');};
+  // Chunks fetch in parallel; async=false keeps execution in order, so one collector is safe.
+  const order=[];window.N722BD_PARTS={push:x=>order.push(x)};
+  const scripts=Array.from({length:N},(_,i)=>new Promise((ok,err)=>{const s=document.createElement('script');s.src='assets/replay-'+String(i).padStart(3,'0')+'.js';s.async=false;
+    s.onload=()=>{done++;progress(done/N*.9);ok();};s.onerror=()=>err(new Error('missing '+s.getAttribute('src')));document.head.append(s);}));
+  Promise.all(scripts).then(async()=>{
+    if(!('DecompressionStream' in window))throw new Error('this browser lacks DecompressionStream.');
+    $('status').textContent='Decompressing…';await new Promise(r=>setTimeout(r,30));
+    const bin=atob(order.join('')),bytes=new Uint8Array(bin.length);for(let i=0;i<bin.length;i++)bytes[i]=bin.charCodeAt(i);
+    const html=await new Response(new Blob([bytes]).stream().pipeThrough(new DecompressionStream('gzip'))).text();
+    progress(1);$('status').textContent='Starting renderer…';
+    document.open();document.write(html);document.close();
+  }).catch(e=>fail(e.message));
+})();
+</script>
+</body>
+</html>
